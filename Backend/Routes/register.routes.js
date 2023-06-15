@@ -59,7 +59,6 @@ registerRouter.post('/doctor', async (req, res)=>{
         console.log('/register/doctor: ', err.message);
         res.status(500).send({msg: err.message});
     }
-    res.send({msg: 'working fine'});
 })
 
 module.exports = registerRouter;
