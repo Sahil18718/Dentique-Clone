@@ -5,7 +5,6 @@
 
 #container{
     display: flex;
-    /* border: 2px solid red; */
     height: 98vh;
     padding: 6px;
 }
@@ -28,14 +27,20 @@
     align-items: center;
     justify-content: center;
     width: 50%;
-    /* border: 1px solid black; */
-    /* border-radius: 4px; */
 }
 
 .form{
     width: 56%;
     padding: 24px;
-    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form .heading{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 16px;
 }
 
 form{
@@ -45,6 +50,8 @@ form{
 }
 
 input {
+    border-radius: 4px;
+    border: 1px solid silver;
     height: 44px;
     font-size: 18px;
     padding-left: 12px;
@@ -64,6 +71,18 @@ input[type='submit']{
 
 a{
     text-decoration: none;
+}
+
+a.AccountCreation{
+    display: block;
+    margin-top: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 20px;
+}
+
+a.AccountCreation:hover{
+    text-decoration: underline rgb(88, 72, 186);
 }
 
 .btn{
@@ -91,4 +110,17 @@ a{
     cursor: pointer;
     color: green;
     font-weight: 500;
+}
+
+
+@media screen and (max-width: 850px) {
+    #container .logo{
+        display: none;
+    }
+    #container .loginSection{
+        width: 100%;
+    }
+    #container .loginSection .form{
+        width: 75%;
+    }
 }
