@@ -33,6 +33,7 @@ const logoutLogic = async (req, res) => {
         let cookie = req.cookies.token;
         let newToken = await blacklistModel({token: cookie});
         await newToken.save();
+        res.clearCookie('token');
         res.status(200).send({msg: 'Logout Successful'});
     }catch(err){
         console.log(err.message);

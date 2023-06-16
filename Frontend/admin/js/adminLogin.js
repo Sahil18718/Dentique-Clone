@@ -9,6 +9,7 @@ formEl.addEventListener('submit', (evnt)=>{
     login(email, password);
 })
 
+
 const login = async (email, password) => {
     let result = await fetch(`${baseServerUrl}`,{
         body: JSON.stringify({...{email}, ...{password}}),
