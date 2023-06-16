@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <style>
+        #chatBox{
+            /* display: none; */
+            margin: auto;
+            width: 100%;
+            text-align: center;
+        }
+        #box{
+            border: 1px solid red;
+            width: 40%;
+            background-image: url("https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg");
+            overflow-y : scroll;
+            height: 60vh;
+            margin: auto;
+            background-color: rgb(120, 122, 124);
+        }
+        #msg_input{
+            margin: 5px;
+            padding: 10px;
+            width: 335px;
+        }
+        #send_btn{
+            width: 60px;
+            padding: 10px;
+            margin: 0px;
+        }
+        .div{
+            margin: 5px;
+            border-radius: 5px;
+            padding: 2px;
+            background-color: white;
+        }
+        .div > p{
+            margin: 0px;
+            padding: 0px;
+            font-size: 2px;
+        }
+        .div > h4{
+            text-decoration: none;
+            margin: 0px;
+            padding: 2px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="chatBox">
+        <h4>Chat Box</h4>
+        <div id="box"></div>
+        <input type="text" placeholder="type your message" id="msg_input">
+        <button id="send_btn">send</button>
+    </div>
+</body>
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+<script>
+    const socket = io("http://localhost:8998/", { transports: ["websocket"] })
+    var name = Math.random() * 1000000
+    let col = 'rgba(' + randomcolor() + ',' + randomcolor() + ',' + randomcolor() + '\)'
+    
+
+    document.getElementById("send_btn").addEventListener("click",()=>{
+        let msg = document.getElementById("msg_input").value
+        socket.emit("chat1",{name,msg,col})
+    })
+
+    socket.on("chat2",(data)=>{
+        if(data.name && data.msg){
+            chatMessage(data.msg,data.name,data.name == name ? true : false,data.col)
+        }
+    })
+    
+    function randomcolor() {
+            return Math.floor(Math.random() * 255);
+    }
+
+    function chatMessage(data,name,self,col){
+        let div = document.createElement("div")
+        div.setAttribute("class","div")
+        
+        let message = document.createElement("h4")
+        let sender = document.createElement("p")
+        sender.style.color = col;
+        let time = document.createElement("p")
+        message.innerText=data
+        sender.innerText = self ? "":name
+        time.innerText= new Date().toLocaleTimeString().split(":").splice(0,2).join(":")
+        div.style.textAlign= self ? "right" : "left"
+        time.style.textAlign= self ? "left" : "right"
+        div.style.width= "30%";
+        if(self){div.style.marginLeft= "60%"}else(div.style.marginRight= "60%")
+        sender.style.textAlign= self ?"right" : "left" 
+        div.append(sender,message,time)
+        document.getElementById("box").append(div)
+    }
+</script>
+</html>
