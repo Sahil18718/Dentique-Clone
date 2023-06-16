@@ -94,7 +94,8 @@ function displayCards(arr){
               button.classList.add("btn", "btn-dark");
               button.innerText="Book Now"
               button.addEventListener("click",(e)=>{
-                alert("clicked me")
+                sessionStorage.setItem("doctor",JSON.stringify(item));
+                window.location.href="./bookappointment.html";
               })
               bottom.append(button);
            card.append(bottom);

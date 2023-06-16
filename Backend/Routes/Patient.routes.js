@@ -8,3 +8,4 @@ patientRouter.post('/login', loginLogic('Patient'));
 patientRouter.post('/register', registerLogic('Patient'));
 
 module.exports = patientRouter;
+
