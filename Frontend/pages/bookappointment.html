@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Font Awesome --><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"/>
+    <!-- Google Fonts --><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB --><link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet"/>
+    <!-- flatpickr --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- sweet alert --> <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title  >Book Appointment</title>
+</head>
+<body>
+    <h1 style="margin: 50px !important; text-align: center;">Book an Appointment</h1>
+    <section class="vh-100 mt-4">
+        <div class="container-fluid h-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+              <img src="https://img.freepik.com/premium-vector/patient-having-online-conversation-with-doctor-online-health-care-services_530733-1116.jpg"
+                class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+              <form>
+                <div class="d-flex flex-column align-items-center justify-content-space-evenly justify-content-lg-start">
+                 
+                  <div id="doctorDetails" class="d-flex flex-row w-100 ">
+                    <!-- <img style="width: 100px;height: 100px;" src='https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg' alt="">
+                    <div class="p-2">
+                      <h5>Name of doc</h5>
+                      <h6>andnhupa@gmail.com</h6>
+                      <h5><span class="badge bg-dark ms-2">Dentist</span></h5>
+                      
+                    </div> -->
+                  </div>
+                  </div>
+      
+                <div class="divider d-flex align-items-center my-4">
+                  <p class="text-center fw-bold mx-0 mb-0">Select date and time</p>
+                </div>
+      
+                <!-- date input -->
+                <div class="form-outline mb-4">
+                  <input style="cursor: pointer;" type="date" id="dateInput" class="form-control form-control-lg"
+                    placeholder="select a date" />
+                  <label class="form-label" for="form3Example3">Select a date</label>
+                </div>
+      
+                <!-- Password input -->
+                <div class="form-outline mb-3">
+                  <!-- <input type="password" id="form3Example4" class="form-control form-control-lg"
+                    placeholder="Enter password" /> -->
+                  <select class=" form-select"  name="time-slots" id="timeSlots">
+                   
+                    <option value="9">9.00 AM - 9.45 AM</option>
+                    <option value="10">10 AM - 10.45 AM</option>
+                    <option value="11">11.15 AM - 12.00 PM</option>
+                    <option value="12">12.15 AM - 1.00 PM</option>
+                    
+                    <option value="2">2.00 PM - 2.45 PM</option>
+                    <option value="3">3.00 PM - 3.45PM</option>
+                    <option value="4">4.00 PM - 4.45PM</option>
+                    <option value="5">5.00 PM - 5.45PM</option>
+                    <option value="7">7.00 PM - 7.45PM</option>
+                    <option value="7">8.00 PM - 8.45PM</option>
+                  </select>
+
+
+
+                 
+                </div>
+      
+                
+      
+                <div class="text-center text-lg-start mt-4 pt-2">
+                  <button type="button" id="submitBtn" class="btn btn-primary btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem;">continue</button>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">Change doctor? <a href="./doctors.html"
+                      class="link-danger">All Doctors</a></p>
+                </div>
+      
+              </form>
+            </div>
+          </div>
+        </div>
+       
+      </section>
+</body>
+<!-- MDB --><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+<script src="../scripts/book.js"></script>
+</html>

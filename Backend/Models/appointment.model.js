@@ -1,4 +1,5 @@
-const { timeStamp } = require("console");
+
+
 const mongoose = require("mongoose");
 
 const appointmentSchema =new mongoose.Schema({
@@ -6,7 +7,9 @@ const appointmentSchema =new mongoose.Schema({
 doctorId : {type:String,required:true},
 userId : {type:String,required:true},
 deleted : {type:Boolean,default:false},
-message :{type:String},
+time : {type:String,required:true},
+date : {type:String,required:true},
+status : {type:String,enum:["pending","accepted","cancelled"],default:"pending"},
 
 
 },{timestamps:true,versionKey:false})
