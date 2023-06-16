@@ -102,6 +102,7 @@ a.AccountCreation:hover{
 
 .facebookBtn:hover{
     color: rgb(33, 103, 196);
+    background-color: rgba(0, 255, 0, 0.1);
     cursor: pointer;
     font-weight: 500;
 }
@@ -109,6 +110,7 @@ a.AccountCreation:hover{
 .googleBtn:hover{
     cursor: pointer;
     color: green;
+    background-color: rgba(0, 255, 0, 0.1);
     font-weight: 500;
 }
 

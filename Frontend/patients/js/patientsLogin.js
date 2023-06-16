@@ -1,4 +1,4 @@
-const baseServerUrl = 'http://localhost:8998/login/patient';
+const baseServerUrl = 'http://localhost:8998/patient/login';
 const emailEl = document.querySelector('input[type="email"]');
 const passwordEl = document.querySelector('input[type="password"]');
 const formEl = document.querySelector('#container .loginSection form');

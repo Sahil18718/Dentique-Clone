@@ -1,4 +1,4 @@
-const baseServerUrl = 'http://localhost:8998/register/doctor';
+const baseServerUrl = 'http://localhost:8998/doctor/register';
 const nameEl = document.querySelector('input[type="text"]');
 const emailEl = document.querySelector('input[type="email"]');
 const ageEl = document.querySelector('input[type="number"]');
