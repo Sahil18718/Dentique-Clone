@@ -1,8 +1,27 @@
 const { AppointmentModel } = require("../Models/appointment.model");
-
+const userModel = require("../Models/user.model");
 const appointmentRouter = require("express").Router();
 
 
+
+
+
+//1. get all doctors👩‍⚕️👩‍⚕️👩‍⚕️ for appointment page
+
+appointmentRouter.get("/doctors",async(req,res)=>{
+  try{
+  let data = await userModel.find({role:"Doctor"});
+  res.send(data)
+
+  }catch(err){console.log("*********errror in /appointments/doctors | get",err)}
+})
+
+
+//get all appointments
+
+appointmentRouter.get("/",async(req,res)=>{
+    res.status(200).json("appointments")
+})
 appointmentRouter.post("/",async(req,res)=>{
     try{
     //___________setting dummy data
