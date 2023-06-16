@@ -5,6 +5,9 @@ const loginRouter = require('./Routes/login.routes');
 const registerRouter = require('./Routes/register.routes');
 const { connection } = require('./configs/db');
 const { appointmentRouter } = require('./Routes/appointment');
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require("swagger-ui-express");
+const { openapiSpecification } = require('./configs/swagger.docs');
 require('dotenv').config();
 
 const app = express();
@@ -18,14 +21,21 @@ app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use("/appointment",appointmentRouter);
 
-app.get('*', (req, res)=>{
-    res.send('<h1>Page Not Found</h1>')
-})
+
 
 app.get("/",(req,res)=>{
     res.send("Dentique Backend Home Page")
 })
 
+//swagger documentation middleware.
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openapiSpecification));
+
+
+
+
+app.get('*', (req, res)=>{
+    res.send('<h1>Page Not Found</h1>')
+})
 
 app.listen(process.env.PORT, ()=>{
     connection();

@@ -1,8 +1,11 @@
+
 const { AppointmentModel } = require("../Models/appointment.model");
 
 const appointmentRouter = require("express").Router();
 
-
+appointmentRouter.get("/",async(req,res)=>{
+    res.status(200).json("appointments")
+})
 appointmentRouter.post("/",async(req,res)=>{
     try{
     //___________setting dummy data

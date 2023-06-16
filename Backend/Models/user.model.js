@@ -17,6 +17,11 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    profilePic:{type:String,
+                default:"https://img.freepik.com/premium-vector/businessman-avatar-cartoon-character-profile_18591-50581.jpg?w=2000"
+    },
+    description:{type:String},
+    fees : {type:Number},
     role: {
         type: String,
         enum: ['Doctor', 'Patient', 'Admin']
