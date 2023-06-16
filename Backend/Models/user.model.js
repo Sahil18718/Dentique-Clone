@@ -22,11 +22,12 @@ const userSchema = mongoose.Schema({
     },
     description:{type:String},
     fees : {type:Number},
+    deleted : {type:Boolean,default:false},
     role: {
         type: String,
         enum: ['Doctor', 'Patient', 'Admin']
     }
-});
+},timestamps:true,versionKey:false);
 
 const userModel = mongoose.model('users', userSchema);
 
