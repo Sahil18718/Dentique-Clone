@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dentique Patient Login</title>
+    <title>Dentique Patient Registration</title>
     <link rel="stylesheet" href="../../styles/LoginRegister.css">
 </head>
 <body>
@@ -15,17 +15,19 @@
             <div class="form">
                 <h2 class="heading">Welcome to Dentique</h2>
                 <form>
+                    <input type="text" placeholder="Enter your Name" required>
                     <input type="email" placeholder="Enter your Email" required>
+                    <input type="number" placeholder="Enter your Age" required>
                     <input type="password" placeholder="Enter Password" required>
                     <input type="submit" value="Submit">
                 </form>
                 <div class="underline"></div>
                 <a href="#"> <button class="btn googleBtn">Google</button></a>
                 <a href="#"><button class="btn facebookBtn">Facebook</button></a>
-                <a href="./register.html" class="AccountCreation">Don't have an account? <span>Create an Account</span></a>
+                <a href="./login.html" class="AccountCreation">Already have an Account?</a>
             </div>
         </div>
     </div>
-    <script src="../js/patientsLogin.js"></script>
+    <script src="../js/patientsRegistration.js"></script>
 </body>
 </html>
