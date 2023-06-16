@@ -19,7 +19,7 @@
     "nodemon": "^2.0.22",
 
     "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^4.6.3"
+    "swagger-ui-express": "^4.6.3",
 
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
