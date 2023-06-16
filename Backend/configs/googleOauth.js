@@ -7,7 +7,7 @@ require('dotenv').config();
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:8998/patient/auth/google/callback"
+    callbackURL: "http://localhost:8998/admin/auth/google/callback"
 },
     async function (accessToken, refreshToken, profile, cb) {
         // let user = {};
@@ -16,8 +16,8 @@ passport.use(new GoogleStrategy({
         // user.icon = profile._json.picture;
         // let pass = uuidv4();
         // user.password = bcrypt.hashSync(pass, Number(process.env.SALT_ROUNDS))
-        console.log(profile);
-        return cb(null, user);
+        // console.log(profile);
+        return cb(null, profile);
     }
 ));
 
