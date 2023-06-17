@@ -35,6 +35,8 @@ submitBtn.addEventListener("click",async(e)=>{
         time : document.getElementById("timeSlots").value,
 
       }
+      
+     
       // if(!obj.date){alert("select a date")}
       // else if(!obj.time){alert("select a time slot")}
       // else {
@@ -75,9 +77,7 @@ async function PostAppointment(obj){
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         window.location.href='./myappointments.html'
-      } else if (result.isDenied) {
-        
-      }
+      } 
     })
 
 

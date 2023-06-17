@@ -10,8 +10,53 @@
     <!-- flatpickr --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- sweet alert --> <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title  >Book Appointment</title>
+    <style>
+      .loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #000;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+  width: 48px;
+    height: 40px;
+    margin-top: 30px;
+    display: inline-block;
+    position: absolute;
+   
+    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 50%);
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid #FF3D00;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+    </style>
 </head>
 <body>
+    <!-- <span class="loader"></span> -->
     <h1 style="margin: 50px !important; text-align: center;">Book an Appointment</h1>
     <section class="vh-100 mt-4">
         <div class="container-fluid h-custom">
@@ -48,21 +93,20 @@
       
                 <!-- Password input -->
                 <div class="form-outline mb-3">
-                  <!-- <input type="password" id="form3Example4" class="form-control form-control-lg"
-                    placeholder="Enter password" /> -->
+               
                   <select class=" form-select"  name="time-slots" id="timeSlots">
                    
-                    <option value="9">9.00 AM - 9.45 AM</option>
-                    <option value="10">10 AM - 10.45 AM</option>
-                    <option value="11">11.15 AM - 12.00 PM</option>
-                    <option value="12">12.15 AM - 1.00 PM</option>
+                    <option value="9.00 AM">9.00 AM - 9.45 AM</option>
+                    <option value="10.00 AM">10 AM - 10.45 AM</option>
+                    <option value="11.15 AM">11.15 AM - 12.00 PM</option>
+                    <option value="12.15 PM">12.15 AM - 1.00 PM</option>
+                    <option value="2.00 PM">2.00 PM - 2.45 PM</option>
+                    <option value="3.00 PM">3.00 PM - 3.45PM</option>
+                    <option value="4.00 PM">4.00 PM - 4.45PM</option>
+                    <option value="5.00 PM">5.00 PM - 5.45PM</option>
+                    <option value="7.00 PM">7.00 PM - 7.45PM</option>
+                    <option value="9.00 PM">9.00 PM - 9.45PM</option>
                     
-                    <option value="2">2.00 PM - 2.45 PM</option>
-                    <option value="3">3.00 PM - 3.45PM</option>
-                    <option value="4">4.00 PM - 4.45PM</option>
-                    <option value="5">5.00 PM - 5.45PM</option>
-                    <option value="7">7.00 PM - 7.45PM</option>
-                    <option value="7">8.00 PM - 8.45PM</option>
                   </select>
 
 
