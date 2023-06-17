@@ -122,12 +122,23 @@ video{
   height: 500px;
 }
 .bookingBtn{
-  position: fixed;
-  top: 0%;
-  width: 100%;
-  background: black;
+  position: absolute;
+  width: 99%;
   z-index: 2;
-  
+  height: 500px;
+  background-color: rgba(0,0,0,0.3);
+  top: 101px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookingBtn a{
+  background-color: #121c26;
+  padding: 14px;
+  font-size: 24px;
+    border-radius: 4px;
+    font-family: monospace;
 }
 
 .theend {
