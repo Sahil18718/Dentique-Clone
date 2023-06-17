@@ -44,6 +44,30 @@ appointmentRouter.post("/",async(req,res)=>{
 }
 })
 
+// pataint
+//all appointments of a doctor
+appointmentRouter.get("/patient",async(req,res)=>{
+    let userId = "648c47af54f8af600e3e1d45"
+    try{
+        // let data =await AppointmentModel.find({userId})
+        // res.send(data)
+        let data = await AppointmentModel.aggregate([
+            {
+                "$lookup": {
+                    "from": "users",
+                    "localField": "userId",
+                    "foreignField": "_id",
+                    "as": "user"
+                }
+            }
+
+
+
+
+        ]);
+        res.send(data)
+    }catch(err){console.log("error in appointment | get",err)}
+})
 
 //all appointments of a user
 
