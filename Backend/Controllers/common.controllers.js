@@ -16,7 +16,7 @@ const loginLogic = (Role) => {
             if(result && userDetails[0].role===Role){
                 let accessToken = jwt.sign({userId: userDetails._id}, process.env.JWT_SECRET_KEY, {expiresIn: '4h'});
                 res.cookie('token', accessToken, {maxAge: 4*60*60*1000})
-                res.status(200).send({msg: 'Login Successful'});
+                res.status(200).send({msg: 'Login Successful', accessToken});
             }else{
                 res.status(400).send({msg: 'Wrong Credentials'});
             }
@@ -62,33 +62,19 @@ const registerLogic = (Role) =>{
     }
 }
 
+const googleOauth = (Role)=>{
+    return async (req, res)=>{
+        let isUserValid = await userModel.findOne({email: req.user._json.email});
+        if (isUserValid && isUserValid.role === Role) {
+            const access_token = jwt.sign({ userId: isUserValid._id }, process.env.JWT_SECRET_KEY, { expiresIn: '4h' });
+            res.cookie('token', access_token, {maxAge: 4*60*60*1000})
+            const queryString = JSON.stringify(access_token);
+            res.redirect(`http://127.0.0.1:5500/Frontend/patients/html/login.html?${queryString}`)
+        }
+        else{
+            res.status(200).send({ msg: "You are not authorized" });
+        }
+    }
+}
 
-// // update for doctor
-
-// postRouter.patch("/update/:postID",async(req,res)=>{
-//     const{postID}=req.params
-//     const payload=req.body
-//     try {
-//         await PostModel.findByIdAndUpdate({_id:postID},payload)
-//         res.status(200).send("Updated")
-//     } catch (error) {
-//         res.status(400).send({"msg":error.message})
-//     }
-    
-// })
-
-// // Delete for doctor
-// postRouter.delete("/delete/:postID",async(req,res)=>{
-//     const {postID}=req.params
-//     try {
-//         await PostModel.findByIdAndDelete({_id:postID})
-//         res.status(200).send({"msg":"deleted"})
-//     } catch (error) {
-//         res.status(400).send({"msg":error.message})
-        
-//     }
-   
-// })
-
-
-module.exports = {loginLogic, logoutLogic, registerLogic};
+module.exports = {loginLogic, logoutLogic, registerLogic, googleOauth};
