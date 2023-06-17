@@ -35,6 +35,8 @@ submitBtn.addEventListener("click",async(e)=>{
         time : document.getElementById("timeSlots").value,
 
       }
+      
+     
       // if(!obj.date){alert("select a date")}
       // else if(!obj.time){alert("select a time slot")}
       // else {
@@ -54,6 +56,7 @@ submitBtn.addEventListener("click",async(e)=>{
 
 async function PostAppointment(obj){
  try{
+  loaderStart();
   let response = await fetch(`${baseUrl}/appointment`, {
                    method: 'POST',
                    body: JSON.stringify(obj),
@@ -63,6 +66,7 @@ async function PostAppointment(obj){
                    });
   let json = await response.json();
   if(response.ok){
+    loaderEnd()
     Swal.fire({
       icon:"success",
       title: 'Appointment Created Successfully',
@@ -75,15 +79,15 @@ async function PostAppointment(obj){
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         window.location.href='./myappointments.html'
-      } else if (result.isDenied) {
-        
-      }
+      } 
     })
 
 
   }
   //alert error
-  else {Swal.fire({
+  else {
+    loaderEnd();
+    Swal.fire({
     icon: 'error',
     title: 'Oops...',
     text: `${json}`,
@@ -98,3 +102,14 @@ async function PostAppointment(obj){
 })}
 }
 
+
+//loader functionality
+function loaderEnd(){
+  let loader = document.getElementById("loader");
+  loader.style.display="none";
+}
+
+function loaderStart(){
+  let loader = document.getElementById("loader");
+  loader.style.display="inline-block";
+}

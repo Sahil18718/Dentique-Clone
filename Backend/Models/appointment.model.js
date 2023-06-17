@@ -4,12 +4,12 @@ const mongoose = require("mongoose");
 
 const appointmentSchema =new mongoose.Schema({
 
-doctorId : {type:String,required:true},
-userId : {type:String,required:true},
+doctorId : {type:mongoose.Schema.Types.ObjectId,ref:"user"},
+userId : {type:mongoose.Schema.Types.ObjectId,ref:"user"},
 deleted : {type:Boolean,default:false},
 time : {type:String,required:true},
 date : {type:String,required:true},
-status : {type:String,enum:["pending","accepted","cancelled"],default:"pending"},
+status : {type:String,enum:["pending","accepted","rejected"],default:"pending"},
 
 
 },{timestamps:true,versionKey:false})

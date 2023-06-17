@@ -17,11 +17,7 @@ appointmentRouter.get("/doctors",async(req,res)=>{
 })
 
 
-//get all appointments
 
-appointmentRouter.get("/",async(req,res)=>{
-    res.status(200).json("appointments")
-})
 appointmentRouter.post("/",async(req,res)=>{
     try{
     //___________setting dummy data
@@ -49,9 +45,58 @@ appointmentRouter.post("/",async(req,res)=>{
 })
 
 
+//all appointments of a user
+
+
+appointmentRouter.get("/",async(req,res)=>{
+    let userId = "648c47af54f8af600e3e1d45"
+    try{
+        // let data =await AppointmentModel.find({userId})
+        // res.send(data)
+        let data = await AppointmentModel.aggregate([
+            {
+                "$lookup": {
+                    "from": "users",
+                    "localField": "doctorId",
+                    "foreignField": "_id",
+                    "as": "doctor"
+                }
+            }
 
 
 
+
+        ]);
+        res.send(data)
+    }catch(err){console.log("error in appointment | get",err)}
+})
+//update appointment div values
+appointmentRouter.patch("/:appointmentId",async(req,res)=>{
+    try{
+    let userId = "648c47af54f8af600e3e1d45";
+    let {status} =req.body;
+    let appointmentId = req.params.appointmentId;
+    if(!status){res.status(400).json("please provide a status")}
+    else if(status=="accepted" || status=="rejected"){
+        let data =await AppointmentModel.findOneAndUpdate({_id:appointmentId},{status},{new:true});
+        res.send(data)
+    }
+    else{
+        res.status(400).json("That's not a valid status")
+    }
+    }catch(err){console.log("error in appointment | get",err)}
+})
+
+
+//delete an appointment from userside
+
+appointmentRouter.delete("/:id",async(req,res)=>{
+    try{
+        
+        let output = await AppointmentModel.findByIdAndDelete(req.params.id);
+        res.send(output)
+    }catch(err){console.log("err in delete appointment",err)}
+})
 
 
 
