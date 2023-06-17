@@ -5,11 +5,20 @@ let doctorRouter=express.Router();
 // let jwt=require("jsonwebtoken")
 // let Redis=require("ioredis");
 const { registerLogic, loginLogic } = require("../Controllers/common.controllers");
+const userModel = require("../Models/user.model");
 // let redis=new Redis();
 
 
-doctorRouter.get("/",(req,res)=>{
-    res.send(" Doctor part Working");
+doctorRouter.get("/allDocotor", async (req,res)=>{
+
+    // res.send(" Doctor part Working");
+    try {
+      let list = await userModel.find({role: 'Doctor'});
+      res.status(200).send(list);
+    } catch (err) {
+      console.log('/doctor/allDoctor: ',err.message);
+      res.status(500).send({msg: err.message});
+    }
 })
 
 // DoctorRouter.post("/register",async(req,res)=>{
@@ -50,7 +59,7 @@ doctorRouter.patch("/update/:postID",async(req,res)=>{
     const{postID}=req.params
     const payload=req.body
     try {
-        await PostModel.findByIdAndUpdate({_id:postID},payload)
+        await user.modelModel.findByIdAndUpdate({_id:postID},payload)
         res.status(200).send("Updated")
     } catch (error) {
         res.status(400).send({"msg":error.message})
@@ -62,7 +71,7 @@ doctorRouter.patch("/update/:postID",async(req,res)=>{
 doctorRouter.delete("/delete/:postID",async(req,res)=>{
     const {postID}=req.params
     try {
-        await PostModel.findByIdAndDelete({_id:postID})
+        await user.model.findByIdAndDelete({_id:postID})
         res.status(200).send({"msg":"deleted"})
     } catch (error) {
         res.status(400).send({"msg":error.message})
