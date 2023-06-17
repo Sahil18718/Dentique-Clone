@@ -3,26 +3,22 @@ let appointMentDiv = document.getElementById("appointMentDiv")
 fetchAppointments()
 
 
+
 async function fetchAppointments(){
     try{
+    loaderStart();
     let res= await fetch(`${baseUrl}/appointment`);
     let json = await res.json();
-    displayCards(json)
+    if(res.ok){
+        loaderEnd()
+        displayCards(json);
+        
+    }
+   
     }catch(err){console.log(err)}
 }
-{/* <div class="card">
-<div class="card-body ">
- 
-  <img  style="width: 150px; margin-left: 30%; height: 150px;" class="rounded-circle " src="https://www.goodmorningimagesdownload.com/wp-content/uploads/2021/12/Best-Quality-Profile-Images-Pic-Download-2023.jpg" alt="">
- 
-  <h5 style="text-align: center;" class="card-title ">Dr Nandhakumar</h5>
-  <p class="card-text ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quasi eveniet consectetur illum quis ducimus.</p>
-  <a  class="btn btn-light">status</a>
-  <a  class="btn "> 22/23/23 , 11.00AM </a>
-  <a  class="btn btn-danger">Delete</a>
-  
-</div>
-</div> */}
+
+
 
 function displayCards(arr){
     appointMentDiv.innerHTML=null;
@@ -38,11 +34,11 @@ function displayCards(arr){
         cardBody.classList.add("card-body");
         let image = document.createElement("img");
              image.setAttribute("src",item.doctor[0].profilePic);
-             image.setAttribute("style","width: 150px; margin-left: 30%; height: 150px;");
+             image.setAttribute("style","width: 150px; height: 150px;");
              image.classList.add("rounded-circle");
         cardBody.append(image);
         let h5 = document.createElement("h5");
-            h5.setAttribute("style","text-align: center;" )
+            
             h5.classList.add("card-title");
             h5.innerText=item.doctor[0].name;
         cardBody.append(h5);
@@ -109,3 +105,15 @@ async function deleteAppointment(id){
   else {alert("error occured");}
  }catch(err){alert(err);}
 }
+
+
+//loader functionality
+function loaderEnd(){
+    let loader = document.getElementById("loader");
+    loader.style.display="none";
+  }
+  
+  function loaderStart(){
+    let loader = document.getElementById("loader");
+    loader.style.display="inline-block";
+  }

@@ -10,53 +10,10 @@
     <!-- flatpickr --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- sweet alert --> <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title  >Book Appointment</title>
-    <style>
-      .loader {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: inline-block;
-  border-top: 4px solid #000;
-  border-right: 4px solid transparent;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-
-  width: 48px;
-    height: 40px;
-    margin-top: 30px;
-    display: inline-block;
-    position: absolute;
-   
-    
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, 50%);
-}
-.loader::after {
-  content: '';  
-  box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border-left: 4px solid #FF3D00;
-  border-bottom: 4px solid transparent;
-  animation: rotation 0.5s linear infinite reverse;
-}
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} 
-    </style>
+    <link rel="stylesheet" href="../styles/loader.css">
 </head>
 <body>
-    <!-- <span class="loader"></span> -->
+    <span id="loader" class="loader"></span>
     <h1 style="margin: 50px !important; text-align: center;">Book an Appointment</h1>
     <section class="vh-100 mt-4">
         <div class="container-fluid h-custom">
