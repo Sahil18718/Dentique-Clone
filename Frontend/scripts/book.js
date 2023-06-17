@@ -1,4 +1,4 @@
-let baseUrl = "http://localhost:8000"
+let baseUrl = "http://localhost:8998"
 let doctor = JSON.parse( sessionStorage.getItem("doctor"));
 
 // if(!user){window.location.href="./login.html"}

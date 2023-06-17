@@ -14,63 +14,15 @@
       height: 250px;
     }
    </style>
+   <link rel="stylesheet" href="../styles/index.css">
 </head>
 <body>
+  <div id="nav"></div>
   <main>
 
 
   <div class="container">
-    <!-- Filters -->
-  <nav class="navbar navbar-expand-lg navbar-dark mt-3 mb-5 shadow p-2" style="background-color: #607D8B">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-  
-      <!-- Navbar brand -->
-      <a class="navbar-brand" href="#">Doctors:</a>
-  
-      <!-- Toggle button -->
-      <button 
-         class="navbar-toggler" 
-         type="button" 
-         data-mdb-toggle="collapse" 
-         data-mdb-target="#navbarSupportedContent2" 
-         aria-controls="navbarSupportedContent2" 
-         aria-expanded="false" 
-         aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-  
-      <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent2">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  
-          <!-- Link -->
-          <li class="nav-item acitve">
-            <a class="nav-link text-white" href="#">Select a doctor from the list of all our doctors</a>
-          </li>
-          <!-- <li class="nav-item">
-                <a class="nav-link text-white" href="#">Dentist</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#"></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#">Outwears</a>
-              </li> -->
-  
-        </ul>
-  
-        <!-- Search -->
-        <!-- <form class="w-auto py-1" style="max-width: 12rem">
-          <input type="search" class="form-control rounded-0" placeholder="Search" aria-label="Search">
-          
-        </form> -->
-  
-      </div>
-    </div>
-    <!-- Container wrapper -->
-  </nav>
-  <!-- Filter ends here -->
+
 
 
     
@@ -78,7 +30,7 @@
     <section>
   <div class="text-center">
    <div id="doctorsContainer" class="row">
-        
+         <h1 style="margin-bottom: 100px;margin-top: 50px;" >Our Doctors</h1>
           <!--    <div class="col-lg-3 col-md-6 mb-4">
           <div class="card">
             <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
@@ -120,7 +72,7 @@
   </section>
     
   <!-- Pagination -->
-    <nav aria-label="Page navigation example" class="d-flex justify-content-center mt-3">
+    <!-- <nav aria-label="Page navigation example" class="d-flex justify-content-center mt-3">
     <ul class="pagination">
       <li class="page-item disabled">
         <a class="page-link" href="#" aria-label="Previous">
@@ -138,13 +90,14 @@
         </a>
       </li>
     </ul>
-  </nav>  
+  </nav>   -->
   <!-- Pagination -->  
   </div>
   </main>
    <!--Main layout-->
   
 </body>
+<script src="../scripts/navbar.js"></script>
 <!-- MDB --><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
 <script src="../scripts/doctors.js"></script>
 </html>
