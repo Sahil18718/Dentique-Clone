@@ -1,4 +1,4 @@
-let baseUrl = "http://localhost:8000"
+let baseUrl = "http://localhost:8998"
 let appointMentDiv = document.getElementById("appointMentDiv")
 fetchAppointments()
 
@@ -60,7 +60,7 @@ function displayCards(arr){
         cardBody.append(a2);
         let a3 = document.createElement("a");
             a3.classList.add("btn-danger","btn","m-2");
-            a3.innerText= "Delete";
+            a3.innerHTML= "Delete";
             a3.addEventListener("click",()=>{
                 deleteAppointment(item._id);
             })

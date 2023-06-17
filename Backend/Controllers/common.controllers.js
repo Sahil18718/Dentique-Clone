@@ -14,7 +14,7 @@ const loginLogic = (Role) => {
             }
             let result = await bcrypt.compare(data.password, userDetails[0].password);
             if(result && userDetails[0].role===Role){
-                let accessToken = jwt.sign({userId: userDetails._id}, process.env.JWT_SECRET_KEY, {expiresIn: '4h'});
+                let accessToken = jwt.sign({userId: userDetails[0]._id}, process.env.JWT_SECRET_KEY, {expiresIn: '4h'});
                 res.cookie('token', accessToken, {maxAge: 4*60*60*1000})
                 res.status(200).send({msg: 'Login Successful'});
             }else{
