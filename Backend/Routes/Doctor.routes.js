@@ -33,6 +33,44 @@ doctorRouter.get("/",(req,res)=>{
 doctorRouter.post('/register', registerLogic('Doctor'));
 doctorRouter.post('/login', loginLogic('Doctor'));
 
+doctorRouter.post("/newdr",async(req,res)=>{
+  try {
+      const blog= new blogModel(req.body)
+      await blog.save()
+      res.status(400).send("New Docotor register")
+      
+  }catch(error){
+      res.status(400).send({"msg":error.message})
+  }
+})
+
+// update for doctor
+
+doctorRouter.patch("/update/:postID",async(req,res)=>{
+    const{postID}=req.params
+    const payload=req.body
+    try {
+        await PostModel.findByIdAndUpdate({_id:postID},payload)
+        res.status(200).send("Updated")
+    } catch (error) {
+        res.status(400).send({"msg":error.message})
+    }
+    
+})
+
+// Delete for doctor
+doctorRouter.delete("/delete/:postID",async(req,res)=>{
+    const {postID}=req.params
+    try {
+        await PostModel.findByIdAndDelete({_id:postID})
+        res.status(200).send({"msg":"deleted"})
+    } catch (error) {
+        res.status(400).send({"msg":error.message})
+        
+    }
+   
+})
+
   // let tokenN;
   // DoctorRouter.post("/login",async(req,res)=>{
   //   // console.log("Working");
