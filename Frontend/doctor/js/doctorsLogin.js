@@ -18,6 +18,8 @@ const login = async (email, password) => {
         }
     });
     if(result.ok){
+        result = await result.json();
+        localStorage.setItem('token', result.accessToken);
         alert('Login Successful');
     }
 }

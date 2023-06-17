@@ -21,26 +21,10 @@ doctorRouter.get("/allDocotor", async (req,res)=>{
     }
 })
 
-// DoctorRouter.post("/register",async(req,res)=>{
-//     let {name,email,mobile,password}=req.body;
-//     try {
-//       let user=await DoctorModel.findOne({email})
-//       if(user){
-//         return res.status(400).send({msg:"User is already present"})
-//       }
-//       bcrypt.hash(password,4,async function(err,hash){
-//         let user = new DoctorModel({name,email,mobile,password:hash});
-//         await user.save();
-//         res.status(200).send({msg:"Registration Successfull"})
-//       })
-      
-//     } catch (error) {
-//       res.send({msg:error.message});
-//     }
-//   })
-
 doctorRouter.post('/register', registerLogic('Doctor'));
+
 doctorRouter.post('/login', loginLogic('Doctor'));
+
 
 doctorRouter.post("/newdr",async(req,res)=>{
   try {
@@ -141,5 +125,6 @@ doctorRouter.delete("/delete/:postID",async(req,res)=>{
 //     res.status(200).send({msg:"Token Generated"});
 
 // })
+
   
 module.exports= doctorRouter;

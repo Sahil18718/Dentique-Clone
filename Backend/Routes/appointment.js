@@ -1,3 +1,4 @@
+const { auth } = require("../Controllers/auth.controller");
 const { AppointmentModel } = require("../Models/appointment.model");
 const userModel = require("../Models/user.model");
 const appointmentRouter = require("express").Router();
@@ -6,7 +7,7 @@ const appointmentRouter = require("express").Router();
 
 
 
-//1. get all doctors👩‍⚕️👩‍⚕️👩‍⚕️ for appointment page
+//1. get all doctors for appointment page
 
 appointmentRouter.get("/doctors",async(req,res)=>{
   try{
@@ -17,11 +18,7 @@ appointmentRouter.get("/doctors",async(req,res)=>{
 })
 
 
-//get all appointments
 
-appointmentRouter.get("/",async(req,res)=>{
-    res.status(200).json("appointments")
-})
 appointmentRouter.post("/",async(req,res)=>{
     try{
     //___________setting dummy data
@@ -49,9 +46,88 @@ appointmentRouter.post("/",async(req,res)=>{
 })
 
 
+//all appointments of a user
+
+
+appointmentRouter.get("/",auth,async(req,res)=>{
+    let userId = "648c47af54f8af600e3e1d45"
+    try{
+        // let data =await AppointmentModel.find({userId})
+        // res.send(data)
+        let data = await AppointmentModel.aggregate([
+            { $match: { $expr : { $eq: [ '$userId' , { $toObjectId: userId } ] } } },
+            {
+                "$lookup": {
+                    "from": "users",
+                    "localField": "doctorId",
+                    "foreignField": "_id",
+                    "as": "doctor"
+                }
+            }
 
 
 
+
+        ]);
+        res.send(data)
+    }catch(err){console.log("error in appointment | get",err)}
+})
+
+//all appointments of a doctor
+appointmentRouter.get("/patient",async(req,res)=>{
+   
+    try{
+        let userId = "648be84a65c581de9e72d1ac"
+        // let data =await AppointmentModel.find({userId})
+        // res.send(data)
+        let data = await AppointmentModel.aggregate([
+            // {"$match":{time:"11.15 AM"}},
+            { $match: { $expr : { $eq: [ '$doctorId' , { $toObjectId: "648be4260cba6f410d249817" } ] } } },
+            {
+                "$lookup": {
+                    "from": "users",
+                    "localField": "userId",
+                    "foreignField": "_id",
+                    "as": "user"
+                }
+            }
+
+
+
+
+        ]);
+        res.send(data)
+    }catch(err){console.log("error in appointment | get",err)}
+})
+//update appointment div values
+appointmentRouter.patch("/:appointmentId",async(req,res)=>{
+    try{
+    let userId = "648c47af54f8af600e3e1d45";
+    let {status} =req.body;
+    let appointmentId = req.params.appointmentId;
+    let appointmentExists =await AppointmentModel.findOne({_id:appointmentId,userId:userId})
+    if(!status){res.status(400).json("please provide a status")}
+    else if(!appointmentExists){res.status(401).json("you are not authorized to make changes on this appointment or this appointment doesn't exists")}
+    else if(status=="accepted" || status=="rejected"){
+        let data =await AppointmentModel.findOneAndUpdate({_id:appointmentId},{status},{new:true});
+        res.send(data)
+    }
+    else{
+        res.status(400).json("That's not a valid status")
+    }
+    }catch(err){console.log("error in appointment | get",err)}
+})
+
+
+//delete an appointment from userside
+
+appointmentRouter.delete("/:id",async(req,res)=>{
+    try{
+        
+        let output = await AppointmentModel.findByIdAndDelete(req.params.id);
+        res.send(output)
+    }catch(err){console.log("err in delete appointment",err)}
+})
 
 
 
