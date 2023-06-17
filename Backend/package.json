@@ -17,13 +17,10 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.2.4",
     "nodemon": "^2.0.22",
-
-    "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^4.6.3",
-
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
-    "socket.io": "^4.6.2"
-
+    "socket.io": "^4.6.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.3"
   }
 }
