@@ -4,6 +4,13 @@ const emailEl = document.querySelector('input[type="email"]');
 const ageEl = document.querySelector('input[type="number"]');
 const passwordEl = document.querySelector('input[type="password"]');
 const formEl = document.querySelector('#container .loginSection form');
+// const queryString = window.location.search;
+// let urlParams = decodeURIComponent(queryString);
+// localStorage.getItem('token')||localStorage.setItem('token', urlParams.split('"')[1]);
+// if(token!==undefined){
+//     window.location.href = 'http://127.0.0.1:5500/Frontend/index.html'
+// }
+
 formEl.addEventListener('submit', (evnt)=>{
     evnt.preventDefault();
     let email = emailEl.value;
