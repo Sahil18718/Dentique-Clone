@@ -4,7 +4,15 @@ let data =[];
 //________________________________________________________________________________________________________
 fetchDoctors()
 async function fetchDoctors(){
-    let response = await fetch(`${baseUrl}/appointment/doctors`);
+   
+    let response = await fetch(`${baseUrl}/appointment/doctors`, {
+      method: 'GET',
+     
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+        "token" : localStorage.getItem("token"),
+      },
+      });
     let json     = await response.json();
     displayCards(json)
 
