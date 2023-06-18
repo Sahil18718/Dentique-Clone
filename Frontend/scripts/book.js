@@ -1,3 +1,4 @@
+if(!localStorage.getItem("token")){window.location.href="./login.html"}
 let baseUrl = "http://localhost:8998"
 let doctor = JSON.parse( sessionStorage.getItem("doctor"));
 
@@ -62,6 +63,7 @@ async function PostAppointment(obj){
                    body: JSON.stringify(obj),
                    headers: {
                      'Content-type': 'application/json; charset=UTF-8',
+                     "token" : localStorage.getItem("token"),
                    },
                    });
   let json = await response.json();

@@ -3,17 +3,17 @@ const jwt = require("jsonwebtoken")
 
 const auth = async (req,res,next)=>{
   try{
-    if(req.cookies.token){
+    if(req.headers.token){
         
-        let incToken = req.cookies.token;
-       // console.log("token",incToken);
+        let incToken = req.headers.token;
+        //console.log("token from header",incToken);
       
         await jwt.verify(incToken, process.env.JWT_SECRET_KEY, function(err, decoded) {
-        if(err){console.log(err)}
+        if(err){ res.status(404).json("you are not authorized")}
         else{ 
          
           req.body.userId =decoded.userId;
-          console.log(req.body.userId,"is the userid added")
+          // console.log(req.body.userId,"is the userid added")
           next();
         }
        
@@ -21,11 +21,13 @@ const auth = async (req,res,next)=>{
        
     }
     else{
-      console.log("cookies",req.cookies)
-      res.status(404).json("please login ")}
+   
+      res.status(404).json("you are not authorized")}
     
   }catch(err){
-    console.log("error  in auth",err)
+    //console.log("error  in auth",err)
+    res.status(500).json("server error")
+  
   }
 }
 
