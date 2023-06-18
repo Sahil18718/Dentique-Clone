@@ -1,4 +1,4 @@
-const baseServerUrl = 'http://localhost:8998/admin/login';
+const baseServerUrl = 'https://greasy-sofa-244-production.up.railway.app/admin/login';
 const emailEl = document.querySelector('input[type="email"]');
 const passwordEl = document.querySelector('input[type="password"]');
 const formEl = document.querySelector('#container .loginSection form');

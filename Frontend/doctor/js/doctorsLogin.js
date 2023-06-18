@@ -1,4 +1,4 @@
-const baseServerUrl = 'http://localhost:8998/doctor/login';
+const baseServerUrl = 'https://greasy-sofa-244-production.up.railway.app/doctor/login';
 const emailEl = document.querySelector('input[type="email"]');
 const passwordEl = document.querySelector('input[type="password"]');
 const formEl = document.querySelector('#container .loginSection form');

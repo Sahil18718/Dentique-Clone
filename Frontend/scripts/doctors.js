@@ -1,4 +1,4 @@
-let baseUrl = `http://localhost:8998`
+let baseUrl = `https://greasy-sofa-244-production.up.railway.app/`
 let doctorsContainer = document.getElementById("doctorsContainer");
 let data =[];
 //________________________________________________________________________________________________________
