@@ -1,0 +1,182 @@
+
+*{
+    /* width: 90%; */
+    justify-content: center;
+}
+#navbar{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+    background-color:rgb(45, 151, 243) ;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+   color: white;
+}
+#navbar h3:hover{
+    color: rgb(10, 10, 10);
+}
+#navbar>img{
+    width: 10%;
+    padding-left: 5px;
+}
+#catagory{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    margin: auto;
+    margin-left: 120px;
+}
+#catagory img{
+    width: 5%;
+    height: 90%;
+    padding-top: 5px;
+
+    
+}
+.text{
+    text-align:left;
+    padding-left: 64px;
+}
+
+#cartbox{
+display: flex;
+ border: 1px solid red;
+ background-color: rgb(132, 132, 255);
+ justify-content: space-between;
+ align-items: center;
+ padding-left: 25px;
+ margin: 5px;
+}
+
+#cartbox button{
+    width: 100px;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    font-size: large; 
+    border-radius: 10px;
+}
+
+#acc{
+    background-color: green;
+    margin: 5px;
+}
+#rej{
+    background-color: rgb(236, 14, 14);
+
+}
+
+#headline{
+    display: flex;
+    justify-content: space-around;
+    color: rgb(255, 255, 255);
+    background-color: blue;
+    margin-top: 5px;
+}
+#headline div{
+    display: flex;
+    gap: 20px;
+    padding-left: 15px;
+}
+
+#left{
+    width: 90%;
+}
+#body{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(17, 2, 2);
+    width: 90%;
+    margin: auto;
+    
+}
+#ss{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    /* margin: auto; */
+    /* border: 1px solid rgb(125, 6, 172); */
+}
+.Search {
+    display: flex;
+    align-items: center;
+    font-size:xxxx-large;
+}
+.Search input{
+    /* background-color: aqua; */
+    width: 500px;
+    height: 30px;
+    border-left: none;           
+    border-right: none;           
+    border-top: none;           
+   
+}
+#details{
+    width: 40%;
+    padding: 10px;
+    margin-left: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.icon{
+    display: flex;
+    gap: 10px;
+    /* padding-right: 140px; */
+    justify-content: flex-start;
+    color: rgb(80, 80, 80);
+    align-items: center;
+
+}
+.icon img{
+    width: 40px;
+    height: 50px;
+    color: rgb(80, 80, 80);
+}
+.button{
+    height: max-content;
+    width: max-content;
+}
+#qus img{
+width: 15px;
+
+}
+#qus{
+   width: 80%;
+   margin-left: 70px;
+   margin-top: 10px;
+   padding: 10px;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   border-radius: 10px;
+}
+
+#qus h2{
+    color: rgb(96, 96, 238);
+}
+
+#endFotter{
+    margin-top: 30px;
+    background-color: rgb(19, 18, 18);
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    
+}
+#endFotter img{
+   
+    width: 50%;
+    margin: auto;
+    margin-left: 400px;
+
+}
+.end{
+    margin-left: 20px;
+
+}
+.end h2{
+    color: blue;
+}
+.end h3{
+    color: aliceblue;
+}
+
+
