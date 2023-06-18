@@ -21,6 +21,7 @@ const login = async (email, password) => {
         result = await result.json();
         localStorage.setItem('token', result.accessToken);
         alert('Login Successful');
-        window.location.href="./"
+        window.location.href="../../request/bookingPage.html"
     }
+    
 }

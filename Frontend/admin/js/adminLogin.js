@@ -20,6 +20,6 @@ const login = async (email, password) => {
     });
     if(result.ok){
         alert('Login Successful');
-        window.location.href="../Admiindr/Dr.data.html"
+        window.location.href="../../Admiindr/Dr.data.html"
     }
 }
