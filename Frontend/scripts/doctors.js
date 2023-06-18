@@ -101,12 +101,21 @@ function displayCards(arr){
               bottom.append(h6)
               let button = document.createElement("button");
               button.classList.add("btn", "btn-dark");
-              button.innerText="Book Now"
+              button.innerHTML="Book Now"
               button.addEventListener("click",(e)=>{
                 sessionStorage.setItem("doctor",JSON.stringify(item));
                 window.location.href="./bookappointment.html";
               })
+              let chatBtn = document.createElement("button");
+              chatBtn.classList.add("btn","mr-1", "btn-success");
+              chatBtn.innerHTML="<i class='fa-solid fa-comment'></i>"
+
+              chatBtn.addEventListener("click",(e)=>{
+               
+                window.location.href="../chat/chat.html";
+              })
               bottom.append(button);
+              bottom.append(chatBtn);
            card.append(bottom);
     //card completed
     mainDiv.append(card);

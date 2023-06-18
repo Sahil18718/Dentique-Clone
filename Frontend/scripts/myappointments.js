@@ -1,4 +1,11 @@
-if(!localStorage.getItem("token")){window.location.href="./login.html"}
+if(!localStorage.getItem("token")){
+    swal.fire({
+        title : "Please Login",
+        icon:"warning"
+      }).then((result)=>{
+        if(result.isConfirmed){  window.location.href="../index.html"}
+      })
+  }
 
 let baseUrl = "http://localhost:8998"
 let appointMentDiv = document.getElementById("appointMentDiv")
@@ -68,6 +75,13 @@ function displayCards(arr){
             a2.classList.add("btn","m-2");
             a2.innerText= `${item.date} , ${item.time}`;
         cardBody.append(a2);
+        let a31 = document.createElement("a");
+        a31.classList.add("btn-success","btn","m-2");
+        a31.innerHTML= "<i class='fa-sharp fa-solid fa-comment'></i>";
+        a31.addEventListener("click",()=>{
+            window.location.href="../chat/chat.html";
+        })
+        cardBody.append(a31);
         let a3 = document.createElement("a");
             a3.classList.add("btn-danger","btn","m-2");
             a3.innerHTML= "Delete";

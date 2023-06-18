@@ -1,4 +1,13 @@
-if(!localStorage.getItem("token")){window.location.href="./login.html"}
+if(!localStorage.getItem("token")){
+  swal.fire({
+      title : "Please Login",
+      icon:"warning"
+    }).then((result)=>{
+      if(result.isConfirmed){  window.location.href="../index.html"}
+    })
+}
+
+
 let baseUrl = "http://localhost:8998"
 let doctor = JSON.parse( sessionStorage.getItem("doctor"));
 
