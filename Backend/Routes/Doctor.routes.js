@@ -28,7 +28,7 @@ doctorRouter.post('/login', loginLogic('Doctor'));
 
 doctorRouter.post("/newdr",async(req,res)=>{
   try {
-      const blog= new blogModel(req.body)
+      const blog= new userModel(req.body)
       await blog.save()
       res.status(400).send("New Docotor register")
       
