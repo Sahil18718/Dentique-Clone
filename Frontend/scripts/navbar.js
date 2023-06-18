@@ -7,6 +7,7 @@ nav.innerHTML=` <div class="logo">
 <div class="navbar-inner"></div>
 <ul>
 <li><a href="../pages/doctors.html">Doctors</a></li>
+<li><a id="appointments" href="../pages/myappointments.html">Appointments</a></li>
 <li class="dropdown">
 <a href="#">Login</a>
 <div class="dropdown-content">

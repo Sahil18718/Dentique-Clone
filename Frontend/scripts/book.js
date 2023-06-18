@@ -1,4 +1,4 @@
-if(!localStorage.getItem("token")){
+if(!localStorage.getItem("token") || localStorage.getItem("token")=="undefined"){
   swal.fire({
       title : "Please Login",
       icon:"warning"
