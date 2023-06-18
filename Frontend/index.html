@@ -30,8 +30,8 @@
             </div>
             <div class="bar">
                 <div id="butt">
-                    <button class="login"><a href="./signup login Frontend/login.html"> <b>LOG IN </b> </a> </button>
-                    <button class="signup"><a href="./signup login Frontend/signup.html"> <b> SIGN UP </b></a> </button>
+                    <button class="login"><a href="./patients/html/login.html"> <b>LOG IN </b> </a> </button>
+                    <button class="signup"><a href="./patients/html/register.html"> <b> SIGN UP </b></a> </button>
                 </div>
             </div>
         </div>
@@ -68,7 +68,11 @@
 
     <img class="images" src="./images//image2.png" alt="">
 
-
+    <script>
+        const queryString = window.location.search;
+        let urlParams = decodeURIComponent(queryString);
+        localStorage.getItem('token')||localStorage.setItem('token', urlParams.split('"')[1]);
+    </script>
 </body>
 
 </html>
