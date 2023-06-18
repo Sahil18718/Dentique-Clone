@@ -7,7 +7,7 @@ if(!localStorage.getItem("token") || localStorage.getItem("token")=="undefined" 
       })
   }
 
-let baseUrl = "https://greasy-sofa-244-production.up.railway.app/"
+let baseUrl = "https://greasy-sofa-244-production.up.railway.app"
 let appointMentDiv = document.getElementById("appointMentDiv")
 fetchAppointments()
 

@@ -23,7 +23,7 @@ const login = async (email, password) => {
         result = await result.json();
         localStorage.setItem('token', result.accessToken);
         alert('Login Successful');
-        window.location.href ="./index.html"
+        window.location.href ="../../index.html"
     }else{
         result = await result.json();
         console.log(result);
