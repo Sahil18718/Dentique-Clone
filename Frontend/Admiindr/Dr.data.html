@@ -9,19 +9,25 @@
     <!-- MDB --><link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet"/>
     <!-- flatpickr --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- sweet alert --> <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
    <style>
     .doctorImage{
       height: 250px;
     }
+    .container{
+      display: flex;
+      
+    }
    </style>
-   <link rel="stylesheet" href="../styles/index.css">
+   
+   <link rel="stylesheet" href="../styles/navbar.css">
+   <link rel="stylesheet" href="../styles/loader.css">
 </head>
 <body>
-  <div id="nav"></div>
+  
+  <nav id="nav"></nav>
+  <span id="loader" class="loader"></span>
   <main>
-
-
-  <div class="container">
 
 
 
@@ -29,7 +35,7 @@
   <!-- Products -->
     <section>
   <div class="text-center">
-   <div id="doctorsContainer" class="row">
+   <div style="padding-left: 5%; padding-right: 5%;" id="doctorsContainer" class="row">
          <h1 style="margin-bottom: 100px;margin-top: 50px;" >Our Doctors</h1>
           <!--    <div class="col-lg-3 col-md-6 mb-4">
           <div class="card">
@@ -93,11 +99,15 @@
   </nav>   -->
   <!-- Pagination -->  
   </div>
+  
   </main>
    <!--Main layout-->
   
 </body>
 <script src="../scripts/navbar.js"></script>
 <!-- MDB --><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
-<script src="../scripts//doctors.js"></script>
+<script src="../scripts/doctors.js"></script>
+<script>
+  
+</script>
 </html>
