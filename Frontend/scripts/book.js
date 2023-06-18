@@ -1,4 +1,14 @@
-let baseUrl = "http://localhost:8000"
+if(!localStorage.getItem("token") || localStorage.getItem("token")=="undefined"){
+  swal.fire({
+      title : "Please Login",
+      icon:"warning"
+    }).then((result)=>{
+      if(result.isConfirmed){  window.location.href="../index.html"}
+    })
+}
+
+
+let baseUrl = "http://localhost:8998"
 let doctor = JSON.parse( sessionStorage.getItem("doctor"));
 
 // if(!user){window.location.href="./login.html"}
@@ -62,6 +72,7 @@ async function PostAppointment(obj){
                    body: JSON.stringify(obj),
                    headers: {
                      'Content-type': 'application/json; charset=UTF-8',
+                     "token" : localStorage.getItem("token"),
                    },
                    });
   let json = await response.json();

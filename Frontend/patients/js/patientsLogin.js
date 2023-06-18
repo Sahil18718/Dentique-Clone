@@ -2,6 +2,8 @@ const baseServerUrl = 'http://localhost:8998/patient/login';
 const emailEl = document.querySelector('input[type="email"]');
 const passwordEl = document.querySelector('input[type="password"]');
 const formEl = document.querySelector('#container .loginSection form');
+
+
 formEl.addEventListener('submit', (evnt)=>{
     evnt.preventDefault();
     let email = emailEl.value;
@@ -18,6 +20,13 @@ const login = async (email, password) => {
         }
     });
     if(result.ok){
+        result = await result.json();
+        localStorage.setItem('token', result.accessToken);
         alert('Login Successful');
+        window.location.href = 'http://127.0.0.1:5500/Frontend/index.html'
+    }else{
+        result = await result.json();
+        console.log(result);
+        alert(result.msg);
     }
 }

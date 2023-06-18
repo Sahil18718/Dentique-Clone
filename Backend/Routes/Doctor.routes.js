@@ -5,33 +5,64 @@ let doctorRouter=express.Router();
 // let jwt=require("jsonwebtoken")
 // let Redis=require("ioredis");
 const { registerLogic, loginLogic } = require("../Controllers/common.controllers");
+const userModel = require("../Models/user.model");
 // let redis=new Redis();
 
 
-doctorRouter.get("/",(req,res)=>{
-    res.send(" Doctor part Working");
+doctorRouter.get("/allDocotor", async (req,res)=>{
+
+    // res.send(" Doctor part Working");
+    try {
+      let list = await userModel.find({role: 'Doctor'});
+      res.status(200).send(list);
+    } catch (err) {
+      console.log('/doctor/allDoctor: ',err.message);
+      res.status(500).send({msg: err.message});
+    }
 })
 
-// DoctorRouter.post("/register",async(req,res)=>{
-//     let {name,email,mobile,password}=req.body;
-//     try {
-//       let user=await DoctorModel.findOne({email})
-//       if(user){
-//         return res.status(400).send({msg:"User is already present"})
-//       }
-//       bcrypt.hash(password,4,async function(err,hash){
-//         let user = new DoctorModel({name,email,mobile,password:hash});
-//         await user.save();
-//         res.status(200).send({msg:"Registration Successfull"})
-//       })
-      
-//     } catch (error) {
-//       res.send({msg:error.message});
-//     }
-//   })
-
 doctorRouter.post('/register', registerLogic('Doctor'));
+
 doctorRouter.post('/login', loginLogic('Doctor'));
+
+
+doctorRouter.post("/newdr",async(req,res)=>{
+  try {
+      const blog= new blogModel(req.body)
+      await blog.save()
+      res.status(400).send("New Docotor register")
+      
+  }catch(error){
+      res.status(400).send({"msg":error.message})
+  }
+})
+
+// update for doctor
+
+doctorRouter.patch("/update/:postID",async(req,res)=>{
+    const{postID}=req.params
+    const payload=req.body
+    try {
+        await user.modelModel.findByIdAndUpdate({_id:postID},payload)
+        res.status(200).send("Updated")
+    } catch (error) {
+        res.status(400).send({"msg":error.message})
+    }
+    
+})
+
+// Delete for doctor
+doctorRouter.delete("/delete/:postID",async(req,res)=>{
+    const {postID}=req.params
+    try {
+        await user.model.findByIdAndDelete({_id:postID})
+        res.status(200).send({"msg":"deleted"})
+    } catch (error) {
+        res.status(400).send({"msg":error.message})
+        
+    }
+   
+})
 
   // let tokenN;
   // DoctorRouter.post("/login",async(req,res)=>{
@@ -94,5 +125,6 @@ doctorRouter.post('/login', loginLogic('Doctor'));
 //     res.status(200).send({msg:"Token Generated"});
 
 // })
+
   
 module.exports= doctorRouter;

@@ -1,4 +1,13 @@
-let baseUrl = "http://localhost:8000"
+if(!localStorage.getItem("token") || localStorage.getItem("token")=="undefined" ){
+    swal.fire({
+        title : "Please Login",
+        icon:"warning"
+      }).then((result)=>{
+        if(result.isConfirmed){  window.location.href="../index.html"}
+      })
+  }
+
+let baseUrl = "http://localhost:8998"
 let appointMentDiv = document.getElementById("appointMentDiv")
 fetchAppointments()
 
@@ -7,7 +16,15 @@ fetchAppointments()
 async function fetchAppointments(){
     try{
     loaderStart();
-    let res= await fetch(`${baseUrl}/appointment`);
+  
+    let res = await fetch(`${baseUrl}/appointment`, {
+        method: 'GET',
+       
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          "token" : localStorage.getItem("token"),
+        },
+        });
     let json = await res.json();
     if(res.ok){
         loaderEnd()
@@ -58,9 +75,16 @@ function displayCards(arr){
             a2.classList.add("btn","m-2");
             a2.innerText= `${item.date} , ${item.time}`;
         cardBody.append(a2);
+        let a31 = document.createElement("a");
+        a31.classList.add("btn-success","btn","m-2");
+        a31.innerHTML= "<i class='fa-sharp fa-solid fa-comment'></i>";
+        a31.addEventListener("click",()=>{
+            window.location.href="../chat/chat.html";
+        })
+        cardBody.append(a31);
         let a3 = document.createElement("a");
             a3.classList.add("btn-danger","btn","m-2");
-            a3.innerText= "Delete";
+            a3.innerHTML= "Delete";
             a3.addEventListener("click",()=>{
                 deleteAppointment(item._id);
             })
@@ -85,6 +109,7 @@ async function fetchAndUpdate(id,status){
                   body: JSON.stringify({status}),
                   headers: {
                     'Content-type': 'application/json; charset=UTF-8',
+                    'token' :localStorage.getItem("token")
                   },
 
                                                                                   })
@@ -98,6 +123,10 @@ async function deleteAppointment(id){
  try{
    let res = await  fetch(`${baseUrl}/appointment/${id}`, {
           method: 'DELETE',
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+            'token' :localStorage.getItem("token")
+          },
                });
   if(res.ok){
     location.reload();
