@@ -59,13 +59,10 @@ display: flex;
     font-size: large; 
     border-radius: 10px;
 }
-/* #cartbox div{
-    gap: 50px;
-} */
 
 #acc{
     background-color: green;
-    /* margin: 20px; */
+    margin: 5px;
 }
 #rej{
     background-color: rgb(236, 14, 14);
@@ -78,12 +75,11 @@ display: flex;
     color: rgb(255, 255, 255);
     background-color: blue;
     margin-top: 5px;
-    /* padding-right: 60px; */
 }
 #headline div{
     display: flex;
     gap: 20px;
-    padding-left: 5px;
+    padding-left: 15px;
 }
 
 #left{
@@ -120,13 +116,9 @@ display: flex;
 }
 #details{
     width: 40%;
-    height: auto;
     padding: 10px;
     margin-left: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-#details h2{
-color: blue;
 }
 .icon{
     display: flex;

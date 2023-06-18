@@ -26,11 +26,9 @@ function cartbox(data) {
           <h4>${elem.user[0].name}</h4>
           <h4>${elem.date}</h4>
           <h4>${elem.time}</h4>
-          <img src="/Frontend/images/chat-logo.png" alt="chat-logo" id="chatLogo" onclick="chatLogo()" >
-
           <div>
-           <button onclick="updateStatusAccepted('${elem._id}')" id="acc">Accepted</button>
-           <button onclick="updateStatusRejected('${elem._id}')" id="rej">Rejected</button>
+           <button onclick="updateStatus()" id="acc">Accepted</button>
+           <button onclick="updateStatus()" id="rej">Rejected</button>
           </div>
           
        </div>
