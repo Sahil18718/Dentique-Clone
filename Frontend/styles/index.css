@@ -106,8 +106,40 @@ a {
   transform: scale(0.8);
 }
 
+.second{
+  width: 100%;
+}
 /* nav css complete here */
 
+video{
+  object-fit: cover;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  top: 3px;
+  height: 500px;
+}
+.bookingBtn{
+  position: absolute;
+  width: 99%;
+  z-index: 2;
+  height: 500px;
+  background-color: rgba(0,0,0,0.3);
+  top: 101px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookingBtn a{
+  background-color: #121c26;
+  padding: 14px;
+  font-size: 24px;
+    border-radius: 4px;
+    font-family: monospace;
+}
 
 .theend {
   width: 100%;
@@ -184,10 +216,77 @@ a {
   font-size: medium;
 }
 
-#foot{
+.images{
   margin-top: -10%;
   width: 100%;
 }
 /* footer css completes here  */
 
+@media only screen and (min-width: 114px) and (max-width: 550px) {
+  /* Responsive styles for the navigation bar */
+  #nav {
+    height: 70px;
+  }
+
+  .logo {
+    width: 30%;
+    height: 70px;
+    margin-left: 20px;
+  }
+
+  .navele {
+    padding-left: 30px;
+    margin-left: 40px;
+  }
+
+  .bar {
+    width: 200px;
+    height: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    font-size: small;
+  }
+
+ 
+
+  /* Responsive styles for the footer section */
+  .theend {
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .theendcard {
+    width: 90%;
+    height: auto;
+  }
+
+  .lastcard {
+    padding-left: 20px;
+  }
+
+  .lastcard img {
+    width: 140px;
+    height: 70px;
+    padding-left: 10px;
+  }
+
+  .lastcard1 :nth-child(2) {
+    width: 180px;
+    padding-left: 15px;
+  }
+
+  .lastcard1 :nth-child(1) {
+    width: 160px;
+    padding-left: 40px;
+  }
+
+  .lastcard1 p {
+    padding-right: 20px;
+  }
+
+  .images {
+    margin-top: 0;
+  }
+}
 

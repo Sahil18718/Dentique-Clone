@@ -1,3 +1,5 @@
+if(!localStorage.getItem("token")){window.location.href="./login.html"}
+
 let baseUrl = "http://localhost:8998"
 let appointMentDiv = document.getElementById("appointMentDiv")
 fetchAppointments()
@@ -7,7 +9,15 @@ fetchAppointments()
 async function fetchAppointments(){
     try{
     loaderStart();
-    let res= await fetch(`${baseUrl}/appointment`);
+  
+    let res = await fetch(`${baseUrl}/appointment`, {
+        method: 'GET',
+       
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          "token" : localStorage.getItem("token"),
+        },
+        });
     let json = await res.json();
     if(res.ok){
         loaderEnd()
@@ -85,6 +95,7 @@ async function fetchAndUpdate(id,status){
                   body: JSON.stringify({status}),
                   headers: {
                     'Content-type': 'application/json; charset=UTF-8',
+                    'token' :localStorage.getItem("token")
                   },
 
                                                                                   })
@@ -98,6 +109,10 @@ async function deleteAppointment(id){
  try{
    let res = await  fetch(`${baseUrl}/appointment/${id}`, {
           method: 'DELETE',
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+            'token' :localStorage.getItem("token")
+          },
                });
   if(res.ok){
     location.reload();
