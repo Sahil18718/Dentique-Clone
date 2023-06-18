@@ -41,12 +41,15 @@
 
 #cartbox{
 display: flex;
- border: 1px solid red;
+ /* border: 1px solid red; */
  background-color: rgb(132, 132, 255);
  justify-content: space-between;
  align-items: center;
- padding-left: 25px;
+ padding-left: 50px;
  margin: 5px;
+}
+#chatLogo{
+    width: 5%;
 }
 
 #cartbox button{

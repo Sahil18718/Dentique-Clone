@@ -45,9 +45,17 @@ apiFeatch()
 //http://localhost:8000/appointment/648d3d899798e7bd78bf52ad
 
 let url=`http://localhost:8000/appointment/`
+
+function updateStatusAccepted(id){
+  updateStatus(id,"accepted")
+}
+function updateStatusRejected(id){
+  updateStatus(id,"rejected")
+}
+
 function updateStatus(id,param){
-    console.log(id)
-    alert("hfchfhj")
+    // console.log(id,param)
+    // alert(param)
     fetch(`${url}${id}`, {
         method: 'PATCH',
         headers: {
@@ -68,3 +76,13 @@ function updateStatus(id,param){
 }
 
  //updateStatus()
+
+  
+
+
+  function chatLogo (){
+    window.location.assign( "/Frontend/chat/chat.html");
+    console.log("ok");
+
+  }
+
