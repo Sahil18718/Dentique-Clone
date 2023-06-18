@@ -17,7 +17,7 @@ $(document).ready(function() {
     // Send AJAX request
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:8998/doctor/newdr',
+      url: 'https://greasy-sofa-244-production.up.railway.app/doctor/newdr',
       data: formData,
       success: function(response) {
         // Handle success response

@@ -5,7 +5,7 @@ let data =[];
 fetchDoctors()
 async function fetchDoctors(){
    loaderStart();
-    let response = await fetch(`${baseUrl}/appointment/doctors`, {
+    let response = await fetch(`${baseUrl}appointment/doctors`, {
       method: 'GET',
      
       headers: {
