@@ -4,7 +4,7 @@ let data =[];
 //________________________________________________________________________________________________________
 fetchDoctors()
 async function fetchDoctors(){
-   
+   loaderStart();
     let response = await fetch(`${baseUrl}/appointment/doctors`, {
       method: 'GET',
      
@@ -13,6 +13,7 @@ async function fetchDoctors(){
         "token" : localStorage.getItem("token"),
       },
       });
+    if(response.ok){loaderEnd()}
     let json     = await response.json();
     displayCards(json)
 
@@ -114,3 +115,13 @@ function displayCards(arr){
     })
 }
 
+//loader functionality
+function loaderEnd(){
+  let loader = document.getElementById("loader");
+  loader.style.display="none";
+}
+
+function loaderStart(){
+  let loader = document.getElementById("loader");
+  loader.style.display="inline-block";
+}
