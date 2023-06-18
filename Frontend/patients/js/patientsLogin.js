@@ -1,4 +1,4 @@
-const baseServerUrl = 'http://localhost:8998/patient/login';
+const baseServerUrl = 'https://greasy-sofa-244-production.up.railway.app/patient/login';
 const emailEl = document.querySelector('input[type="email"]');
 const passwordEl = document.querySelector('input[type="password"]');
 const formEl = document.querySelector('#container .loginSection form');
@@ -23,7 +23,7 @@ const login = async (email, password) => {
         result = await result.json();
         localStorage.setItem('token', result.accessToken);
         alert('Login Successful');
-        window.location.href = 'http://127.0.0.1:5500/Frontend/index.html'
+        window.location.href ="./index.html"
     }else{
         result = await result.json();
         console.log(result);

@@ -5,7 +5,7 @@
 const allcartBox = document.getElementById("allcartBox")
 
 function apiFeatch() {
-  fetch("http://localhost:8000/appointment/patient")
+  fetch("https://greasy-sofa-244-production.up.railway.app/appointment/patient")
     .then((res) => res.json())
     .then((data) => {
       cartbox(data)
@@ -44,7 +44,7 @@ apiFeatch()
 
 //http://localhost:8000/appointment/648d3d899798e7bd78bf52ad
 
-let url=`http://localhost:8000/appointment/`
+let url=`https://greasy-sofa-244-production.up.railway.app/appointment/`
 
 function updateStatusAccepted(id){
   updateStatus(id,"accepted")

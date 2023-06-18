@@ -8,7 +8,7 @@ if(!localStorage.getItem("token") || localStorage.getItem("token")=="undefined")
 }
 
 
-let baseUrl = "http://localhost:8998"
+let baseUrl = "https://greasy-sofa-244-production.up.railway.app/"
 let doctor = JSON.parse( sessionStorage.getItem("doctor"));
 
 // if(!user){window.location.href="./login.html"}

@@ -1,4 +1,4 @@
-const baseServerUrl = 'http://localhost:8998/patient/register';
+const baseServerUrl = 'https://greasy-sofa-244-production.up.railway.app/patient/register';
 const nameEl = document.querySelector('input[type="text"]');
 const emailEl = document.querySelector('input[type="email"]');
 const ageEl = document.querySelector('input[type="number"]');
