@@ -9,11 +9,78 @@
     <!-- MDB --><link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet"/>
     <!-- flatpickr --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- sweet alert --> <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #81a7ed;
+        padding: 20px;
+      }
+      
+      /* h1 {
+        text-align: center;
+      } */
+      
+      .form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        margin-right: 100px;
+      }
+      
+      .form-group {
+        margin-bottom: 20px;
+      }
+      
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      .form-group input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+      }
+      
+      .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+        resize: vertical;
+      }
+      
+      .btn-submit {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      
+      .btn-submit:hover {
+        background-color: #45a049;
+      }
+    </style>
    <style>
     .doctorImage{
       height: 250px;
     }
+    .container{
+      display: flex;
+      
+    }
    </style>
+   
    <link rel="stylesheet" href="../styles/index.css">
 </head>
 <body>
@@ -22,7 +89,42 @@
 
 
   <div class="container">
-
+    <div class="form-container">
+      <h1>Doctor Registration</h1>
+      <form>
+        <div class="form-group">
+          <label for="doctor-name">Name:</label>
+          <input type="text" id="doctor-name" name="doctor-name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="doctor-email">Email:</label>
+          <input type="email" id="doctor-email" name="doctor-email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="doctor-password">Password:</label>
+          <input type="password" id="doctor-password" name="doctor-password" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="doctor-age">Age:</label>
+          <input type="number" id="doctor-age" name="doctor-age" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="doctor-description">Description:</label>
+          <textarea id="doctor-description" name="doctor-description" rows="4" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="doctor-fees">Fees:</label>
+          <input type="number" id="doctor-fees" name="doctor-fees" required>
+        </div>
+        
+        <button type="submit" class="btn-submit">Register</button>
+      </form>
+    </div>
 
 
     
@@ -93,6 +195,7 @@
   </nav>   -->
   <!-- Pagination -->  
   </div>
+  
   </main>
    <!--Main layout-->
   
@@ -100,4 +203,7 @@
 <script src="../scripts/navbar.js"></script>
 <!-- MDB --><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
 <script src="../scripts/doctors.js"></script>
+<script>
+  
+</script>
 </html>
