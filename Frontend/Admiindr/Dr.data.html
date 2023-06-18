@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sahil Doctor Data</title>
     <!-- Font Awesome --><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"/>
     <!-- Google Fonts --><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
     <!-- MDB --><link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet"/>
@@ -19,17 +19,84 @@
       
     }
    </style>
+   <style>
+  #doctorform{
+    margin-left: 10px;
+    
+  }
+
+  
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+ </style>
+
    
    <link rel="stylesheet" href="../styles/navbar.css">
    <link rel="stylesheet" href="../styles/loader.css">
 </head>
 <body>
+
+  
   
   <nav id="nav"></nav>
   <span id="loader" class="loader"></span>
   <main>
 
+    <h1>Register Doctor</h1>
+  <form id="doctorform" action="#" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
 
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="imageURL">Image URL:</label>
+    <input type="url" id="imageURL" name="imageURL" required>
+
+    <label for="fees">Fees </label>
+    <input type="text" id="fees" name="fees" required>
+
+    <label for="feesAddress">Address </label>
+    <input type="text" id="fees" name="fees" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4" cols="50" required></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
 
     
   <!-- Products -->
