@@ -9,68 +9,7 @@
     <!-- MDB --><link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet"/>
     <!-- flatpickr --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- sweet alert --> <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #81a7ed;
-        padding: 20px;
-      }
-      
-      /* h1 {
-        text-align: center;
-      } */
-      
-      .form-container {
-        max-width: 400px;
-        margin: 0 auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        margin-right: 100px;
-      }
-      
-      .form-group {
-        margin-bottom: 20px;
-      }
-      
-      .form-group label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
-      
-      .form-group input {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        box-sizing: border-box;
-      }
-      
-      .form-group textarea {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        box-sizing: border-box;
-        resize: vertical;
-      }
-      
-      .btn-submit {
-        background-color: #4CAF50;
-        color: #fff;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-        font-size: 16px;
-      }
-      
-      .btn-submit:hover {
-        background-color: #45a049;
-      }
-    </style>
+   
    <style>
     .doctorImage{
       height: 250px;
@@ -81,60 +20,22 @@
     }
    </style>
    
-   <link rel="stylesheet" href="../styles/index.css">
+   <link rel="stylesheet" href="../styles/navbar.css">
    <link rel="stylesheet" href="../styles/loader.css">
 </head>
 <body>
   
-  <div id="nav"></div>
+  <nav id="nav"></nav>
   <span id="loader" class="loader"></span>
   <main>
 
-
-  <div class="container">
-    <div class="form-container">
-      <h1>Doctor Registration</h1>
-      <form>
-        <div class="form-group">
-          <label for="doctor-name">Name:</label>
-          <input type="text" id="doctor-name" name="doctor-name" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="doctor-email">Email:</label>
-          <input type="email" id="doctor-email" name="doctor-email" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="doctor-password">Password:</label>
-          <input type="password" id="doctor-password" name="doctor-password" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="doctor-age">Age:</label>
-          <input type="number" id="doctor-age" name="doctor-age" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="doctor-description">Description:</label>
-          <textarea id="doctor-description" name="doctor-description" rows="4" required></textarea>
-        </div>
-        
-        <div class="form-group">
-          <label for="doctor-fees">Fees:</label>
-          <input type="number" id="doctor-fees" name="doctor-fees" required>
-        </div>
-        
-        <button type="submit" class="btn-submit">Register</button>
-      </form>
-    </div>
 
 
     
   <!-- Products -->
     <section>
   <div class="text-center">
-   <div id="doctorsContainer" class="row">
+   <div style="padding-left: 5%; padding-right: 5%;" id="doctorsContainer" class="row">
          <h1 style="margin-bottom: 100px;margin-top: 50px;" >Our Doctors</h1>
           <!--    <div class="col-lg-3 col-md-6 mb-4">
           <div class="card">
