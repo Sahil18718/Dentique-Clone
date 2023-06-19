@@ -59,14 +59,14 @@ To run the backend server of this project, you will need to add the following en
 `GOOGLE_CLIENT_SECRET` 
 
 
+
+## System Architecture
+![image](https://github.com/Sahil18718/greasy-sofa-244/blob/main/Frontend/images/System%20Architecture.png)
+
+
 ## Screenshots
 
 ![App Screenshot]()
-
-
-## System Architecture
-![image]()
-
 
 
 
