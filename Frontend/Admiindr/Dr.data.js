@@ -61,17 +61,18 @@ async function fetchAndUpdate(obj){
         //alert error
         else {
           loaderEnd();
-          alert("failure")
-          Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: `${json.msg}`,
+        
+        //   Swal.fire({
+        //   icon: 'error',
+        //   title: 'Oops...',
+        //   text: `${json.msg}`,
          
-        })}
+        // })
+    }
           
-       }catch(err)
-       {
-    console.log(err)
+       }catch(err){
+        console.log(err)
+    }
    
       
 }
