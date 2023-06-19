@@ -74,7 +74,7 @@ To run the backend server of this project, you will need to add the following en
 
 ## Contributors
 
-- [@Sahil Malvia](https://github.com/Sahil18718)
+- [@Sahil Malviya](https://github.com/Sahil18718)
 - [@Anandhu P A](https://github.com/Anandhupa1)
 - [@Manish Mehra](https://github.com/mmehra851)
 
