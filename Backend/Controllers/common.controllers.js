@@ -51,7 +51,7 @@ const registerLogic = (Role) =>{
                 return res.status(400).send({msg: 'User Already Exists, try Logging in'});
             }
             data = {...data, role: Role}
-            let password = await bcrypt.hash(data.password, Number(process.env.SALT_ROUNDS))
+            let Number = await bcrypt.hash(data.password, Number(process.env.SALT_ROUNDS))
             data = {...data, ...{password}};
             let newuser = new userModel(data);
             await newuser.save();
