@@ -80,3 +80,7 @@ To run the backend server of this project, you will need to add the following en
 - [@Mangalam Kumar](https://github.com/Abhi0049k)
 - [@Anandhu P A](https://github.com/Anandhupa1)
 
+## Frontpage  
+![screencapture-649021df72e88046e26e0220-stalwart-fairy-c0e628-netlify-app-2023-12-18-22_13_42](https://github.com/Sahil18718/Dentique-Clone/assets/119488054/5f9654ce-e07a-4852-8860-3d2922b6758a)
+
+
